@@ -1,38 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_atoi.c                                          :+:      :+:    :+:   */
+/*   ft_sortswap.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: sboetti <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/11/13 05:15:12 by sboetti           #+#    #+#             */
-/*   Updated: 2023/01/18 14:18:58 by sboetti          ###   ########.fr       */
+/*   Created: 2023/01/16 10:00:17 by sboetti           #+#    #+#             */
+/*   Updated: 2023/01/18 14:38:22 by sboetti          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "push_swap.h"
 
-int	ft_atoi(const char *str)
+int	ft_mediane(t_pile *a)
 {
-	int	i;
-	int	x;
-	long long	nb;
+	int	*tab;
+	int	mediane;
 
-	i = 0;
-	x = 1;
-	nb = 0;
-	while (str[i] == ' ' || (str[i] >= 9 && str[i] <= 13))
-		i++;
-	if (str[i] == '+' || str[i] == '-')
-	{
-		if (str[i] == '-')
-			x = -1;
-		i++;
-	}
-	while (ft_isdigit(str[i]))
-	{
-		nb = nb * 10 + str[i] - 48;
-		i++;
-	}
-	return (nb * x);
+	tab = a->elem;
+	ft_sort_int_tab(tab, a->size);
+	mediane = tab[a->size / 2];
+	return (mediane);
 }
+/*
+void	ft_sort(t_pile *a, t_pile *b)
+{
+	int	pivot;
+
+	pivot = ft_mediane(a);
+	return ;
+}*/

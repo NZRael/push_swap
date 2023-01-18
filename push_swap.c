@@ -6,64 +6,16 @@
 /*   By: sboetti <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/09 14:14:45 by sboetti           #+#    #+#             */
-/*   Updated: 2023/01/13 15:16:59 by sboetti          ###   ########.fr       */
+/*   Updated: 2023/01/18 15:54:34 by sboetti          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-//Fonction utilise par la fonction suivante pour checker s'il y a des doublons
-static int	ft_doubles(char *str, int argc)
-{
-	static int		i = 0;
-	int				j;
-	char			**tmp;
-
-	tmp = malloc(sizeof(char *) * (argc - 1));
-	if (tmp == NULL)
-		return (free(tmp), 0);
-	j = 0;
-	tmp[i] = str;
-	while (j < i)
-	{
-		if (ft_atoi(str) == ft_atoi(tmp[j]))
-			return (0);
-		j++;
-	}
-	i++;
-	return (1);
-}
-
-//Fonction qui verifie si les argumens entres sont valides
-//en utilisant la fonction precedente
-static int	ft_verifarg(int argc, char **argv)
-{
-	long long		i;
-
-	i = 1;
-	if (argc > 2)
-	{
-		while (i <= argc)
-		{
-			if (ft_atoi(argv[i]) > -2147483648
-				&& ft_atoi(argv[i]) < 2147483647)
-			{
-				if (ft_doubles(argv[i], argc))
-					i++;
-			}
-			else
-				return (0);
-		}
-		return (1);
-	}
-	return (0);
-}
-
 //Fonction qui malloc le bon nombres d'elem pour la pile
 static int	*ft_malloc_pile(int argc)
 {
 	int		*tab;
-	int		i;
 
 	tab = malloc(sizeof(int) * (argc - 1));
 	if (tab == NULL)
@@ -101,14 +53,16 @@ int	main(int argc, char **argv)
 	t_pile	b;
 	int		i;
 
-	if (ft_verifarg(argc, argv))
+	if (!ft_verifarg(argc, argv))
+		return (ft_putstr_fd("Error\n", 2), 0);
+	if (argc == 2)
 	{
-		i = 0;
-		ft_create(&a, argc, argv);
-		ft_create(&b, argc, argv);
-		//IL FAUT COMMENCER A ENTRER DANS LES TRIS;
-		return (1);
+		if (!ft_verifargs(argc, argv))
+			return (ft_putstr_fd("Error\n", 2), 0);
 	}
-	ft_putstr_fd("Error\n", 2);
-	return (0);
+	i = 0;
+	ft_create(&a, argc, argv);
+	ft_create(&b, argc, argv);
+	ft_sort(&a, &b);
+	return (1);
 }

@@ -1,4 +1,4 @@
-SRCS = ft_swap1.c ft_swap2.c ft_swap3.c push_swap.c
+SRCS = ft_push_swap_utils.c ft_sortswap.c ft_verifs.c ft_swap1.c ft_swap2.c ft_swap3.c push_swap.c
 OBJS = ${SRCS:.c=.o}
 GCC = gcc -Wall -Wextra -Werror
 NAME = push_swap
@@ -12,7 +12,7 @@ $(NAME) :
 	@cp ft_printfpushswap/libftprintf.a $(NAME)
 	@${MAKE} -C libft
 	@cp libft/libft.a $(NAME)
-	@$(GCC) $(HEAD) -c $< -o ${<:.c=.o}
+	@$(GCC) $(HEAD) -c ${SRCS}
 	@ar -rcs $(NAME) $(OBJS)
 
 clean :
