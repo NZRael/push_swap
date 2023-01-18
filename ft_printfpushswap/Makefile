@@ -8,7 +8,7 @@ MAKE = make
 all : $(NAME)
 
 $(NAME) :
-		@${MAKE} bonus -C libft
+		@${MAKE} -C libft
 		@cp libft/libft.a ${NAME}
 		@${GCC} ${HEAD} -c ${SRCS}
 		@ar -rcs ${NAME} ${OBJS}
