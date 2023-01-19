@@ -6,7 +6,7 @@
 /*   By: sboetti <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/09 14:07:56 by sboetti           #+#    #+#             */
-/*   Updated: 2023/01/18 14:36:27 by sboetti          ###   ########.fr       */
+/*   Updated: 2023/01/19 14:05:37 by sboetti          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,9 +35,11 @@ void	ft_rra(t_pile *a);
 void	ft_rrb(t_pile *b);
 void	ft_rrr(t_pile *a, t_pile *b);
 void	ft_sort(t_pile *a, t_pile *b);
-int		ft_tablen(char **tab);
-int		ft_doubles(char *str, int argc);
-int		ft_verifarg(int argc, char ** argv);
-int		ft_verifargs(int argc, char ** argv);
+int		ft_tabstrlen(char **tab);
+int		ft_isdoubles(char *str, int argc);
+int		ft_verifarg(char ** argv, int *x, int i);
+//int		ft_verifargs(int argc, char ** argv);
+int		ft_tabintlen(int *tab);
+int		ft_veriff(int argc, char **argv, int *x);
 
 #endif
