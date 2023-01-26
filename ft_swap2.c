@@ -6,7 +6,7 @@
 /*   By: sboetti <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/10 12:20:58 by sboetti           #+#    #+#             */
-/*   Updated: 2023/01/17 14:36:47 by sboetti          ###   ########.fr       */
+/*   Updated: 2023/01/26 15:49:57 by sboetti          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ void	ft_ra(t_pile *a)
 	int		tmp;
 	int		i;
 
-	if (a->top < 1)
+	if (a->size < 1)
 		return ;
 	tmp = a->elem[a->top];
 	i = a->top;
@@ -36,7 +36,7 @@ void	ft_rb(t_pile *b)
 	int		tmp;
 	int		i;
 
-	if (b->top < 1)
+	if (b->size < 1)
 		return ;
 	tmp = b->elem[b->top];
 	i = b->top;
@@ -55,7 +55,7 @@ void	ft_rr(t_pile *a, t_pile *b)
 	int		tmp;
 	int		i;
 
-	if (a->top < 1 || b->top < 1)
+	if (a->size < 1 || b->size < 1)
 		return ;
 	tmp = a->elem[a->top];
 	i = a->top;

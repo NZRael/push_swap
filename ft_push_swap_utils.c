@@ -6,7 +6,7 @@
 /*   By: sboetti <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/17 13:30:26 by sboetti           #+#    #+#             */
-/*   Updated: 2023/01/26 12:37:31 by sboetti          ###   ########.fr       */
+/*   Updated: 2023/01/26 14:23:23 by sboetti          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -72,16 +72,4 @@ int	ft_issort(t_pile *a)
 			return (0);
 	}
 	return (1);
-}
-
-void	ft_freetab(t_pile *p)
-{
-	int	i;
-
-	i = 0;
-	while (i < p->size)
-	{
-		p->elem[i] = 0;
-		i++;
-	}
 }

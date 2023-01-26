@@ -6,7 +6,7 @@
 /*   By: sboetti <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/16 10:00:17 by sboetti           #+#    #+#             */
-/*   Updated: 2023/01/26 13:24:06 by sboetti          ###   ########.fr       */
+/*   Updated: 2023/01/26 14:59:01 by sboetti          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,14 +18,16 @@ int	ft_mediane(t_pile *a, t_pile *b)
 	int	i;
 
 	i = 0;
-	while (i < a->size)
+	b->size = a->size;
+	while (i < b->size)
 	{
 		b->elem[i] = a->elem[i];
 		i++;
 	}
 	ft_sort_int_tab(b->elem, a->size);
-	mediane = b->elem[a->size / 2];
-	ft_freetab(b);
+	mediane = b->elem[b->size / 2];
+	ft_bzero(b->elem, b->size);
+	b->size = 0;
 	ft_printf("mediane >>>> %d\n", mediane);
 	return (mediane);
 }
@@ -37,6 +39,5 @@ void	ft_sort(t_pile *a, t_pile *b)
 	if (a->size < 2 || ft_issort(a))
 		return ;
 	pivot = ft_mediane(a, b);
-	b->top = 0;
 	return ;
 }

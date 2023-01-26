@@ -6,7 +6,7 @@
 /*   By: sboetti <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/09 14:14:45 by sboetti           #+#    #+#             */
-/*   Updated: 2023/01/26 12:17:51 by sboetti          ###   ########.fr       */
+/*   Updated: 2023/01/26 16:00:40 by sboetti          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ static int	*ft_malloc_pile(int x)
 {
 	int		*tab;
 
-	ft_printf("x >>> %d dans le malloc\n", x);
+	//ft_printf("x >>> %d dans le malloc\n", x);
 	tab = malloc(sizeof(int) * x);
 	if (tab == NULL)
 		return (free(tab), NULL);
@@ -58,7 +58,7 @@ static void	ft_create_b(t_pile *b, int x)
 	tab = ft_malloc_pile(x);
 	if (tab == NULL)
 		return (free(tab));
-	b->top = 0;
+	b->top = -1;
 	b->elem = tab;
 	b->size = 0;
 	return ;
@@ -100,6 +100,13 @@ int	main(int argc, char **argv)
 	}
 	ft_printf("\n");
 	ft_sort(&a, &b);
+	ft_pb(&a, &b);
+	ft_pb(&a, &b);
+	ft_pb(&a, &b);
+	ft_pb(&a, &b);
+	ft_pb(&a, &b);
+	ft_pb(&a, &b);
+	ft_rb(&b);
 	z = 0;
 	while (z < a.size)
 	{
@@ -107,6 +114,14 @@ int	main(int argc, char **argv)
 		z++;
 	}
 	ft_printf("\n");
+	z = 0;
+	while (z < b.size)
+	{
+		ft_printf("[%d]", b.elem[z]);
+		z++;
+	}
+	ft_printf("\n");
+
 	return (0);
 }
 /*
@@ -114,4 +129,7 @@ int	main(int argc, char **argv)
 	x = argc = 2						x = argc = 5
 argv = "132" "325" "3322" "1"		 argv = "push" "132" "325 "332" "1"
 	x = 4								x = argc = 5
-verif argv*/
+verif argv
+
+faire les plus petit qui deviennent 1, 2, 3,........., n
+*/

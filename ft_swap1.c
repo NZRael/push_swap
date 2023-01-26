@@ -6,7 +6,7 @@
 /*   By: sboetti <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/10 12:01:07 by sboetti           #+#    #+#             */
-/*   Updated: 2023/01/26 12:37:18 by sboetti          ###   ########.fr       */
+/*   Updated: 2023/01/26 15:56:12 by sboetti          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ void	ft_sa(t_pile *a)
 {
 	int	tmp;
 
-	if (a->top < 1)
+	if (a->size < 1)
 		return ;
 	tmp = a->elem[a->top];
 	a->elem[a->top] = a->elem[a->top - 1];
@@ -29,7 +29,7 @@ void	ft_sb(t_pile *b)
 {
 	int	tmp;
 
-	if (b->top < 1)
+	if (b->size < 1)
 		return ;
 	tmp = b->elem[b->top];
 	b->elem[b->top] = b->elem[b->top - 1];
@@ -42,7 +42,7 @@ void	ft_ss(t_pile *a, t_pile *b)
 {
 	int	tmp;
 
-	if (a->top < 1 || b->top < 1)
+	if (a->size < 1 || b->size < 1)
 		return ;
 	tmp = a->elem[a->top];
 	a->elem[a->top] = a->elem[a->top - 1];
@@ -56,18 +56,28 @@ void	ft_ss(t_pile *a, t_pile *b)
 
 void	ft_pa(t_pile *a, t_pile *b)
 {
-	if (b->top < 1)
+	if (b->size < 1)
 		return ;
 	a->elem[a->top + 1] = b->elem[b->top];
+	a->top += 1;
+	b->top -= 1;
+	a->size += 1;
+	b->size -= 1;
 	ft_putstr_fd("pa\n", 1);
 	return ;
 }
 
 void	ft_pb(t_pile *a, t_pile *b)
 {
-	if (a->top < 1)
+	if (a->size < 1)
 		return ;
+	ft_printf("b.top >> %d, b.size >> %d\n", b->top, b->size);
 	b->elem[b->top + 1] = a->elem[a->top];
+	a->top -= 1;
+	b->top += 1;
+	a->size -= 1;
+	b->size += 1;
+	ft_printf("b.top apres >> %d, b.size apres >> %d\n", b->top, b->size);
 	ft_putstr_fd("pb\n", 1);
 	return ;
 }
