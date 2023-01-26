@@ -6,27 +6,37 @@
 /*   By: sboetti <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/16 10:00:17 by sboetti           #+#    #+#             */
-/*   Updated: 2023/01/18 14:38:22 by sboetti          ###   ########.fr       */
+/*   Updated: 2023/01/26 13:24:06 by sboetti          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int	ft_mediane(t_pile *a)
+int	ft_mediane(t_pile *a, t_pile *b)
 {
-	int	*tab;
 	int	mediane;
+	int	i;
 
-	tab = a->elem;
-	ft_sort_int_tab(tab, a->size);
-	mediane = tab[a->size / 2];
+	i = 0;
+	while (i < a->size)
+	{
+		b->elem[i] = a->elem[i];
+		i++;
+	}
+	ft_sort_int_tab(b->elem, a->size);
+	mediane = b->elem[a->size / 2];
+	ft_freetab(b);
+	ft_printf("mediane >>>> %d\n", mediane);
 	return (mediane);
 }
-/*
+
 void	ft_sort(t_pile *a, t_pile *b)
 {
 	int	pivot;
 
-	pivot = ft_mediane(a);
+	if (a->size < 2 || ft_issort(a))
+		return ;
+	pivot = ft_mediane(a, b);
+	b->top = 0;
 	return ;
-}*/
+}

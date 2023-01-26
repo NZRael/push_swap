@@ -7,21 +7,21 @@ MAKE = make
 
 all : $(NAME)
 
-$(NAME) :
+make :
 	@${MAKE} -C ft_printfpushswap
-	@cp ft_printfpushswap/libftprintf.a $(NAME)
 	@${MAKE} -C libft
-	@cp libft/libft.a $(NAME)
-	@$(GCC) $(HEAD) -c ${SRCS}
-	@ar -rcs $(NAME) $(OBJS)
+
+
+$(NAME) : make
+	@$(GCC) $(HEAD) -o ${NAME} ${SRCS} -L libft -lft -L ft_printfpushswap -lftprintf
 
 clean :
-	rm -f $(OBJS)
+	@rm -f $(OBJS)
 	@$(MAKE) clean -C ft_printfpushswap
 	@$(MAKE) clean -C libft
 
 fclean : clean
-	rm -f $(NAME)
+	@rm -f ${NAME}
 	@$(MAKE) fclean -C ft_printfpushswap
 	@$(MAKE) fclean -C libft
 

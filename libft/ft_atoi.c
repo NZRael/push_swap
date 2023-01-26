@@ -6,7 +6,7 @@
 /*   By: sboetti <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/13 05:15:12 by sboetti           #+#    #+#             */
-/*   Updated: 2023/01/18 14:18:58 by sboetti          ###   ########.fr       */
+/*   Updated: 2023/01/26 10:47:12 by sboetti          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,8 @@
 
 int	ft_atoi(const char *str)
 {
-	int	i;
-	int	x;
+	int			i;
+	int			x;
 	long long	nb;
 
 	i = 0;
