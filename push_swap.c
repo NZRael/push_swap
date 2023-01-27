@@ -6,7 +6,7 @@
 /*   By: sboetti <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/09 14:14:45 by sboetti           #+#    #+#             */
-/*   Updated: 2023/01/26 16:00:40 by sboetti          ###   ########.fr       */
+/*   Updated: 2023/01/27 15:34:09 by sboetti          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,24 +28,26 @@ static int	*ft_malloc_pile(int x)
 //elle saisie toutes les infos de la pile dedans
 static void	ft_create_a(t_pile *a, int x, char **argv, int argc)
 {
-	int		i;
 	int		*tab;
+	int		i;
 
-	i = 0;
 	tab = ft_malloc_pile(x);
 	if (tab == NULL)
 		return (free(tab));
-	while (i < x)
-	{
-		if (argc > 2)
-			tab[i] = ft_psatoi(argv[i + 1]);
-		else
-			tab[i] = ft_psatoi(argv[i]);
-		i++;
-	}
 	a->top = x - 1;
-	a->elem = tab;
 	a->size = x;
+	i = 0;
+	if (argc > 2)
+	{
+		while (x > 0)
+			tab[i++] = ft_psatoi(argv[x--]);
+	}
+	else
+	{
+		while (x > 0)
+			tab[i++] = ft_psatoi(argv[--x]);
+	}
+	a->elem = tab;
 	return ;
 }
 
@@ -90,9 +92,9 @@ int	main(int argc, char **argv)
 		x = ft_tabstrlen(argv);
 	ft_create_a(&a, x, argv, argc);
 	ft_create_b(&b, x);
+	/*ft_printf("a.top ---> %d\n", a.top);
+	ft_printf("a.size ---> %d\n", a.size);*/
 	int	z = 0;
-	ft_printf("a.top ---> %d\n", a.top);
-	ft_printf("a.size ---> %d\n", a.size);
 	while (z < a.size)
 	{
 		ft_printf("[%d]", a.elem[z]);
@@ -100,14 +102,9 @@ int	main(int argc, char **argv)
 	}
 	ft_printf("\n");
 	ft_sort(&a, &b);
-	ft_pb(&a, &b);
-	ft_pb(&a, &b);
-	ft_pb(&a, &b);
-	ft_pb(&a, &b);
-	ft_pb(&a, &b);
-	ft_pb(&a, &b);
-	ft_rb(&b);
-	z = 0;
+	/*ft_sa(&a);
+	ft_rra(&a);*/
+	/*z = 0;
 	while (z < a.size)
 	{
 		ft_printf("[%d]", a.elem[z]);
@@ -120,8 +117,7 @@ int	main(int argc, char **argv)
 		ft_printf("[%d]", b.elem[z]);
 		z++;
 	}
-	ft_printf("\n");
-
+	ft_printf("\n");*/
 	return (0);
 }
 /*
