@@ -7,7 +7,7 @@ GCC = gcc -Wall -Wextra -Werror
 NAME = libft.a
 
 .c.o :
-		@${GCC} -I libft.h -c $< -o ${<:.c=.o}
+		@${GCC} -I ./libft.h -c $< -o ${<:.c=.o}
 
 $(NAME) : ${OBJS}
 		@ar rcs ${NAME} ${OBJS}

@@ -6,7 +6,7 @@
 /*   By: sboetti <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/09 14:07:56 by sboetti           #+#    #+#             */
-/*   Updated: 2023/01/26 14:23:28 by sboetti          ###   ########.fr       */
+/*   Updated: 2023/02/01 13:08:11 by sboetti          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,6 @@
 # define PUSH_SWAP_H
 
 # include "libft/libft.h"
-# include "ft_printfpushswap/libft/libft.h"
 # include "ft_printfpushswap/ft_printf.h"
 
 typedef struct s_pile
