@@ -6,7 +6,7 @@
 /*   By: sboetti <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/09 14:14:45 by sboetti           #+#    #+#             */
-/*   Updated: 2023/01/27 15:34:09 by sboetti          ###   ########.fr       */
+/*   Updated: 2023/02/01 14:45:19 by sboetti          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -104,7 +104,7 @@ int	main(int argc, char **argv)
 	ft_sort(&a, &b);
 	/*ft_sa(&a);
 	ft_rra(&a);*/
-	/*z = 0;
+	z = 0;
 	while (z < a.size)
 	{
 		ft_printf("[%d]", a.elem[z]);
@@ -117,7 +117,7 @@ int	main(int argc, char **argv)
 		ft_printf("[%d]", b.elem[z]);
 		z++;
 	}
-	ft_printf("\n");*/
+	ft_printf("\n");
 	return (0);
 }
 /*

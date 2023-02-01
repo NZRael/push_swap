@@ -1,5 +1,6 @@
 SRCS = ./ft_push_swap_utils.c ./ft_sortswap.c ./ft_verifs.c \
-	./ft_swap1.c ./ft_swap2.c ./ft_swap3.c ./push_swap.c
+	./ft_swap1.c ./ft_swap2.c ./ft_swap3.c ./push_swap.c \
+	./ft_sort_utils.c
 
 OBJS = ${SRCS:.c=.o}
 
