@@ -7,7 +7,7 @@ OBJS = ${SRCS:.c=.o}
 GCC = gcc -Wall -Wextra -Werror
 NAME = push_swap
 
-HEAD = -I ./push_swap.h
+HEAD = -I .push_swap.h
 
 MAKE = make
 

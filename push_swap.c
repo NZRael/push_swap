@@ -6,7 +6,7 @@
 /*   By: sboetti <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/09 14:14:45 by sboetti           #+#    #+#             */
-/*   Updated: 2023/02/01 14:45:19 by sboetti          ###   ########.fr       */
+/*   Updated: 2023/02/01 19:39:29 by sboetti          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,10 +53,8 @@ static void	ft_create_a(t_pile *a, int x, char **argv, int argc)
 
 static void	ft_create_b(t_pile *b, int x)
 {
-	int		i;
 	int		*tab;
 
-	i = 0;
 	tab = ft_malloc_pile(x);
 	if (tab == NULL)
 		return (free(tab));
@@ -72,7 +70,7 @@ int	main(int argc, char **argv)
 {
 	t_pile	a;
 	t_pile	b;
-	int		i;
+	//int		i;
 	int		x;
 
 	x = argc;
@@ -85,7 +83,7 @@ int	main(int argc, char **argv)
 	}
 	if (!(ft_veriff(argc, argv, &x)))
 		return (ft_putstr_fd("Error\n", 1), 0);
-	i = 0;
+	//i = 0;
 	if (argc > 2)
 		x = argc - 1;
 	else

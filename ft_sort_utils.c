@@ -6,7 +6,7 @@
 /*   By: sboetti <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/01 14:15:15 by sboetti           #+#    #+#             */
-/*   Updated: 2023/02/01 15:41:58 by sboetti          ###   ########.fr       */
+/*   Updated: 2023/02/07 19:25:11 by sboetti          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,4 +37,14 @@ void	ft_sort_three(t_pile *a)
 	}
 	else if (first < second && second > third && first > third)
 		ft_rra(a);
+}
+
+void	ft_sort_five(t_pile *a, t_pile *b)
+{
+	
+}
+
+void	ft_get_next_min()
+{
+	return ;
 }
