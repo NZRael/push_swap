@@ -6,7 +6,7 @@
 /*   By: sboetti <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/17 13:30:26 by sboetti           #+#    #+#             */
-/*   Updated: 2023/01/26 14:23:23 by sboetti          ###   ########.fr       */
+/*   Updated: 2023/02/08 15:06:06 by sboetti          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,10 +63,10 @@ int	ft_issort(t_pile *a)
 {
 	int	i;
 
-	i = 1;
-	while (i < a->size)
+	i = 0;
+	while (i < a->top)
 	{
-		if (a->elem[i - 1] < a->elem[i])
+		if (a->elem[i] > a->elem[i + 1])
 			i++;
 		else
 			return (0);

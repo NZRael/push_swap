@@ -6,7 +6,7 @@
 /*   By: sboetti <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/16 10:00:17 by sboetti           #+#    #+#             */
-/*   Updated: 2023/02/06 16:02:31 by sboetti          ###   ########.fr       */
+/*   Updated: 2023/02/09 14:16:45 by sboetti          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,12 +38,15 @@ void	ft_sort(t_pile *a, t_pile *b)
 
 	if (a->size < 2 || ft_issort(a))
 		return ;
-	if (a->size == 2)
-		ft_sa(a);
-	else if (a->size == 3)
-		ft_sort_three(a);
 	pivot = ft_mediane(a, b);
-	if (a->elem[0] > pivot)
-		return ;
+	if (a->size <= 5)
+	{
+		if (a->size == 2)
+			ft_sa(a);
+		else if (a->size == 3)
+			ft_sort_three(a);
+		else
+			ft_sort_five(a, b);
+	}
 	return ;
 }

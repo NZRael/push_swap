@@ -6,7 +6,7 @@
 /*   By: sboetti <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/09 14:07:56 by sboetti           #+#    #+#             */
-/*   Updated: 2023/02/01 14:46:58 by sboetti          ###   ########.fr       */
+/*   Updated: 2023/02/09 14:33:31 by sboetti          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,5 +43,8 @@ long long	ft_psatoi(char *str);
 int			ft_tabintlen(int *tab);
 int			ft_veriff(int argc, char **argv, int *x);
 void		ft_sort_three(t_pile *a);
+void		ft_sort_five(t_pile *a, t_pile *b);
+void		ft_get_next_min(t_pile *a);
+void		printpile(t_pile a);
 
 #endif

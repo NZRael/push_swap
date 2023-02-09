@@ -6,7 +6,7 @@
 /*   By: sboetti <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/01 14:15:15 by sboetti           #+#    #+#             */
-/*   Updated: 2023/02/07 19:25:11 by sboetti          ###   ########.fr       */
+/*   Updated: 2023/02/09 15:53:08 by sboetti          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,10 +41,32 @@ void	ft_sort_three(t_pile *a)
 
 void	ft_sort_five(t_pile *a, t_pile *b)
 {
-	
+	int	i;
+
+	i = 0;
+	ft_pb(a, b);
+	if (a->size == 4)
+		ft_pb(a, b);
+	ft_sort_three(a);
+	return ;
 }
 
-void	ft_get_next_min()
+void	ft_r_or_rr(t_pile *p)
 {
+	int	index;
+	int	x;
+
+	x = 0;
+	index = p->size / 2;
+	while ()
+	{
+		
+	}
+	return ;
+}
+
+void	ft_get_next_min(t_pile *a)
+{
+	(void)a;
 	return ;
 }

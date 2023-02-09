@@ -6,7 +6,7 @@
 /*   By: sboetti <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/09 14:14:45 by sboetti           #+#    #+#             */
-/*   Updated: 2023/02/01 19:39:29 by sboetti          ###   ########.fr       */
+/*   Updated: 2023/02/09 15:53:10 by sboetti          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,6 +64,18 @@ static void	ft_create_b(t_pile *b, int x)
 	return ;
 }
 
+void	printpile(t_pile a)
+{
+	int	z;
+
+	z = a.top;
+	while (z >= 0)
+	{
+		ft_printf("[%d]", a.elem[z]);
+		ft_printf("\n");
+		z--;
+	}
+}
 //Programme qui va initier les piles avec les arguments donnes
 //et la trie parfaitement
 int	main(int argc, char **argv)
@@ -90,32 +102,18 @@ int	main(int argc, char **argv)
 		x = ft_tabstrlen(argv);
 	ft_create_a(&a, x, argv, argc);
 	ft_create_b(&b, x);
-	/*ft_printf("a.top ---> %d\n", a.top);
-	ft_printf("a.size ---> %d\n", a.size);*/
-	int	z = 0;
-	while (z < a.size)
-	{
-		ft_printf("[%d]", a.elem[z]);
-		z++;
-	}
-	ft_printf("\n");
+	ft_printf("a.top ---> %d\n", a.top);
+	ft_printf("a.size ---> %d\n", a.size);
+	ft_printf("pile A :\n");
+	printpile(a);/////////////
 	ft_sort(&a, &b);
 	/*ft_sa(&a);
 	ft_rra(&a);*/
-	z = 0;
-	while (z < a.size)
-	{
-		ft_printf("[%d]", a.elem[z]);
-		z++;
-	}
-	ft_printf("\n");
-	z = 0;
-	while (z < b.size)
-	{
-		ft_printf("[%d]", b.elem[z]);
-		z++;
-	}
-	ft_printf("\n");
+	//
+	ft_printf("pile A apres FT_SORT:\n");
+	printpile(a);////////////
+	ft_printf("pile B :\n");
+	printpile(b);////////////
 	return (0);
 }
 /*
