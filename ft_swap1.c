@@ -6,7 +6,7 @@
 /*   By: sboetti <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/10 12:01:07 by sboetti           #+#    #+#             */
-/*   Updated: 2023/01/27 14:24:47 by sboetti          ###   ########.fr       */
+/*   Updated: 2023/02/14 11:08:38 by sboetti          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -76,7 +76,6 @@ void	ft_pb(t_pile *a, t_pile *b)
 	b->top += 1;
 	a->size -= 1;
 	b->size += 1;
-	//ft_printf("b.top apres >> %d, b.size apres >> %d\n", b->top, b->size);
 	ft_putstr_fd("pb\n", 1);
 	return ;
 }

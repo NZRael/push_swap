@@ -6,7 +6,7 @@
 /*   By: sboetti <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/18 14:32:51 by sboetti           #+#    #+#             */
-/*   Updated: 2023/01/26 11:04:40 by sboetti          ###   ########.fr       */
+/*   Updated: 2023/02/21 14:30:42 by sboetti          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,7 +45,6 @@ int	ft_verifarg(char **argv, int x, int i)
 		return (0);
 	while (i <= x)
 	{
-		//ft_printf("i dans ft_verifarg -> %d\n", i);
 		if (ft_psatoi(argv[i]) >= -2147483648
 			&& ft_psatoi(argv[i]) <= 2147483647)
 		{

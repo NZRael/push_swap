@@ -6,7 +6,7 @@
 /*   By: sboetti <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/09 14:14:45 by sboetti           #+#    #+#             */
-/*   Updated: 2023/02/09 15:53:10 by sboetti          ###   ########.fr       */
+/*   Updated: 2023/02/21 16:20:49 by sboetti          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,6 @@ static int	*ft_malloc_pile(int x)
 {
 	int		*tab;
 
-	//ft_printf("x >>> %d dans le malloc\n", x);
 	tab = malloc(sizeof(int) * x);
 	if (tab == NULL)
 		return (free(tab), NULL);
@@ -64,25 +63,12 @@ static void	ft_create_b(t_pile *b, int x)
 	return ;
 }
 
-void	printpile(t_pile a)
-{
-	int	z;
-
-	z = a.top;
-	while (z >= 0)
-	{
-		ft_printf("[%d]", a.elem[z]);
-		ft_printf("\n");
-		z--;
-	}
-}
 //Programme qui va initier les piles avec les arguments donnes
 //et la trie parfaitement
 int	main(int argc, char **argv)
 {
 	t_pile	a;
 	t_pile	b;
-	//int		i;
 	int		x;
 
 	x = argc;
@@ -94,34 +80,13 @@ int	main(int argc, char **argv)
 			argc = 1;
 	}
 	if (!(ft_veriff(argc, argv, &x)))
-		return (ft_putstr_fd("Error\n", 1), 0);
-	//i = 0;
+		return (ft_putstr_fd("Error\n", 2), 0);
 	if (argc > 2)
 		x = argc - 1;
 	else
 		x = ft_tabstrlen(argv);
 	ft_create_a(&a, x, argv, argc);
 	ft_create_b(&b, x);
-	ft_printf("a.top ---> %d\n", a.top);
-	ft_printf("a.size ---> %d\n", a.size);
-	ft_printf("pile A :\n");
-	printpile(a);/////////////
 	ft_sort(&a, &b);
-	/*ft_sa(&a);
-	ft_rra(&a);*/
-	//
-	ft_printf("pile A apres FT_SORT:\n");
-	printpile(a);////////////
-	ft_printf("pile B :\n");
-	printpile(b);////////////
 	return (0);
 }
-/*
-./push "132 325 332 1"				./push 132 325 332 1
-	x = argc = 2						x = argc = 5
-argv = "132" "325" "3322" "1"		 argv = "push" "132" "325 "332" "1"
-	x = 4								x = argc = 5
-verif argv
-
-faire les plus petit qui deviennent 1, 2, 3,........., n
-*/

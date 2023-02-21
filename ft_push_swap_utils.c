@@ -6,7 +6,7 @@
 /*   By: sboetti <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/17 13:30:26 by sboetti           #+#    #+#             */
-/*   Updated: 2023/02/08 15:06:06 by sboetti          ###   ########.fr       */
+/*   Updated: 2023/02/17 12:13:36 by sboetti          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,14 +62,34 @@ long long	ft_psatoi(char *str)
 int	ft_issort(t_pile *a)
 {
 	int	i;
+	int	res;
 
 	i = 0;
+	res = 0;
 	while (i < a->top)
 	{
 		if (a->elem[i] > a->elem[i + 1])
 			i++;
 		else
-			return (0);
+			return (res);
 	}
-	return (1);
+	res = 1;
+	return (res);
+}
+
+int	ft_r_or_rr(t_pile *p, int x)
+{
+	int	i;
+
+	i = p->top;
+	while (i >= 0)
+	{
+		if (x == p->elem[i])
+			break ;
+		i--;
+	}
+	if (i >= (p->top / 2))
+		return (0);
+	else
+		return (1);
 }
