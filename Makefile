@@ -15,21 +15,17 @@ MAKE = make
 all : $(NAME)
 
 make :
-	@${MAKE} -C ./ft_printfpushswap
 	@${MAKE} -C ./libft
 
-
 $(NAME) : make
-	@$(GCC) $(HEAD) -o ${NAME} ${SRCS} -L ./libft -lft -L ./ft_printfpushswap -lftprintf
+	@$(GCC) $(HEAD) -o ${NAME} ${SRCS} -L ./libft -lft
 
 clean :
 	@rm -f $(OBJS)
-	@$(MAKE) clean -C ./ft_printfpushswap
 	@$(MAKE) clean -C ./libft
 
 fclean : clean
 	@rm -f ${NAME}
-	@$(MAKE) fclean -C ft_printfpushswap
 	@$(MAKE) fclean -C libft
 
 re : fclean all
