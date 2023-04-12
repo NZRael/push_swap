@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_push_swap_utils1.c                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: sboetti <marvin@42.fr>                     +#+  +:+       +#+        */
+/*   By: sboetti <sboetti@student.42nice.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/17 10:42:23 by sboetti           #+#    #+#             */
-/*   Updated: 2023/02/20 15:50:17 by sboetti          ###   ########.fr       */
+/*   Updated: 2023/04/12 10:58:16 by sboetti          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,7 +38,7 @@ static int	*ft_tab_init(t_pile *p)
 	return (new_tab);
 }
 
-int	*ft_sort_int_tab(t_pile *p)
+int	*ft_ps_sort_int_tab(t_pile *p)
 {
 	int	tri;
 	int	i;

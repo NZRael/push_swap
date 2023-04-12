@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: sboetti <marvin@42.fr>                     +#+  +:+       +#+        */
+/*   By: sboetti <sboetti@student.42nice.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/09 14:07:56 by sboetti           #+#    #+#             */
-/*   Updated: 2023/02/28 11:23:53 by sboetti          ###   ########.fr       */
+/*   Updated: 2023/04/12 10:58:30 by sboetti          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,7 @@ void		ft_rrb(t_pile *b);
 void		ft_rrr(t_pile *a, t_pile *b);
 void		ft_sort(t_pile *a, t_pile *b);
 int			ft_tabstrlen(char **tab);
-int			*ft_sort_int_tab(t_pile *p);
+int			*ft_ps_sort_int_tab(t_pile *p);
 int			ft_issort(t_pile *a);
 int			ft_isdoubles(char *str, int argc);
 int			ft_verifarg(char **argv, int x, int i);

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   libft.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: sboetti <marvin@42.fr>                     +#+  +:+       +#+        */
+/*   By: sboetti <sboetti@student.42nice.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/07 14:13:35 by sboetti           #+#    #+#             */
-/*   Updated: 2023/02/17 10:44:21 by sboetti          ###   ########.fr       */
+/*   Updated: 2023/04/07 10:34:21 by sboetti          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 # define LIBFT_H
 
 # include <unistd.h>
+# include <stdarg.h>
 # include <stdio.h>
 # include <string.h>
 # include <stdlib.h>
@@ -67,5 +68,13 @@ void	ft_lstdelone(t_list *lst, void (*del)(void *));
 void	ft_lstclear(t_list **lst, void (*del)(void *));
 void	ft_lstiter(t_list *lst, void (*f)(void *));
 t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *));
+void	ft_sort_int_tab(int *tab, int size);
+
+int		ft_printf(const char *s, ...);
+void	ft_arguments(char str, va_list arg, int *count);
+void	ft_printf_putchar_fd(char c, int fd, int *count);
+void	ft_printf_putstr_fd(char *str, int fd, int *count);
+void	ft_printf_putnbr_fd(int n, int fd, int *count);
+size_t	ft_printf_strlen(char *s);
 
 #endif

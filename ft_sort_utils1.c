@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_sort_utils1.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: sboetti <marvin@42.fr>                     +#+  +:+       +#+        */
+/*   By: sboetti <sboetti@student.42nice.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/15 11:00:45 by sboetti           #+#    #+#             */
-/*   Updated: 2023/02/21 16:20:21 by sboetti          ###   ########.fr       */
+/*   Updated: 2023/04/12 10:59:53 by sboetti          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,7 +68,7 @@ void	ft_sort_hundred(t_pile *a, t_pile *b)
 	int	*sorted_tab;
 
 	i = 1;
-	sorted_tab = ft_sort_int_tab(a);
+	sorted_tab = ft_ps_sort_int_tab(a);
 	if (!sorted_tab)
 		return (free(sorted_tab));
 	while (i != 20)

@@ -3,25 +3,23 @@ SRCS = ./ft_push_swap_utils.c ./ft_push_swap_utils1.c ./ft_sortswap.c \
 	   ./push_swap.c ./ft_sort_utils.c ./ft_sort_utils1.c \
 	   ./ft_sort_utils2.c
 
-OBJS = ${SRCS:.c=.o}
+OBJS = ${SRCS:<.c=.o}
 
 GCC = gcc -Wall -Wextra -Werror
 NAME = push_swap
-
+LIB = libft/libft.a
 HEAD = -I .push_swap.h
-
 MAKE = make
 
 all : $(NAME)
 
-make :
+${LIB} :
 	@${MAKE} -C ./libft
 
-$(NAME) : make
-	@$(GCC) $(HEAD) -o ${NAME} ${SRCS} -L ./libft -lft
+$(NAME) : ${LIB} ${OBJS}
+	@$(GCC) $(HEAD) -L ./libft -lft -o ${NAME} ${OBJS}
 
 clean :
-	@rm -f $(OBJS)
 	@$(MAKE) clean -C ./libft
 
 fclean : clean
